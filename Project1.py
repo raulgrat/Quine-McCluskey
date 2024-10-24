@@ -1,3 +1,6 @@
+# Francisco Soriano & Raul Graterol
+# Project 1 - Quine McCluskey
+
 class QuineMcCluskey:
     def __init__(self, minterms, dont_cares, num_vars, inputs, outputs, numInputs, numOutputs):
         self.minterms = minterms
@@ -36,7 +39,7 @@ class QuineMcCluskey:
                 for term1 in groups[i]:
                     for term2 in groups[i + 1]:
                         if self.can_combine(term1, term2):
-                            new_term = self.combine_terms(term1, term2)
+                            new_term = self.hamming_weight(term1, term2)
                             if new_term not in new_groups[new_term.count('1')]:
                                 new_groups[new_term.count('1')].append(new_term)
                             marked.update([term1, term2])
@@ -58,7 +61,7 @@ class QuineMcCluskey:
         # Check if exactly one bit differs
         return sum(c1 != c2 for c1, c2 in zip(term1, term2)) == 1
 
-    def combine_terms(self, term1, term2):
+    def hamming_weight(self, term1, term2):
         # Combine two terms by replacing differing bit with '-'
         return ''.join(c1 if c1 == c2 else '-' for c1, c2 in zip(term1, term2))
 
