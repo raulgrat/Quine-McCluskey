@@ -179,7 +179,7 @@ def main(in_pla, out_pla):
 # Entry point
 if __name__ == "__main__":
     # Loop through multiple input files
-    for i in range(1, 4):
+    for i in range(1, 6):
         in_pla = f"inputs/input{i}.pla"
         out_pla = f"outputs/output{i}.pla"
 
