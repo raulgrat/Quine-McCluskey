@@ -183,5 +183,4 @@ if __name__ == "__main__":
         in_pla = f"inputs/input{i}.pla"
         out_pla = f"outputs/output{i}.pla"
 
-        # Call the main function with each input-output pair
         main(in_pla, out_pla)
